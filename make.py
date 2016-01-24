@@ -157,7 +157,7 @@ def html(name, options='', split=False):
     cmd = u"doconce replace 'figure' 'рис.' %(name)s.html".encode('utf-8') % vars()
     system(cmd)
 
-    cmd = u"doconce replace 'width=responsive' 'class=\"img-responsive\" style=\"max-width:600px\"' %(name)s.html".encode('utf-8') % vars()
+    cmd = u"doconce replace 'width=responsive' 'class=\"img-responsive\" style=\"max-width:600px; width:100%;\"' %(name)s.html".encode('utf-8') % vars()
     system(cmd)
 
     if split:
