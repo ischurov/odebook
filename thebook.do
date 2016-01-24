@@ -120,7 +120,7 @@ F=-mg,
 *Решением* дифференциального уравнения называется дифференцируемая функция $x=\varphi(t)$, такая, что при подстановке её в уравнение получается верное равенство:
 !bt
 \begin{equation}
-label{general}
+label{eq:general}
 \dot \varphi(t)=f(t, \varphi(t))\quad \forall t\in D(f),
 \end{equation}
 !et
