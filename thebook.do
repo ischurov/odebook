@@ -1,6 +1,21 @@
 ## -*- coding: utf-8 -*-
 
+<%
+import sys
+sys.path.insert(0, '.')
+# Allow imports from local dir to import nesode and odebook
+
+import matplotlib
+matplotlib.use('Agg')
+# Need this to plot pictures without graphical backend
+
+import nesode as no
+from odebook import needfigure, savefigs,mkfig
+import odebook as book 
+%>
+
 <%def name="begin_question()">
+## sphinx doesn't allow quizes inside questions
 % if FORMAT == 'sphinx':
 __Контрольный вопрос.__ 
 % else:
@@ -234,12 +249,6 @@ __Замечание.__ Мы пока не доказали, что других
 
 
 <%
-import sys
-sys.path.insert(0, '/Users/user/prj/hse/nes-ode/thebook')
-import nesode as no
-from odebook import needfigure, savefigs,mkfig
-import odebook as book 
-
 no.rcParams['figure.figsize']=(8,6)
 
 if needfigure("l01exp"):
