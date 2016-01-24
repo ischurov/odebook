@@ -82,7 +82,7 @@ F=-mg,
 \]
 !et
 где $m$ — масса тела, $g$ — ускорение свободного падения (примерно равно 
-%if FORMAT == 'latex':
+%if FORMAT == 'pdflatex':
 10 м/с\textsuperscript{2}
 %else:
 10 м/с<sup>2</sup>
