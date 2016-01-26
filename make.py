@@ -312,11 +312,11 @@ def main():
 
     #spellcheck()
 
-    common_options = '--encoding=utf-8'
+    common_options = '--encoding=utf-8 --examples_as_exercises '
 
     # --- HTML ---
 
-    common_html_options = ''
+    common_html_options = ' '
 
     # HTML Bootstrap
     bootstrap_options = ' --html_style=bootswatch_readable --html_code_style=inherit --html_pre_style=inherit --toc_depth=2 --pygments_html_style=default --html_template=template_bootstrap_wtoc.html --html_figure_caption=bottom --html_figure_hrule=top+bottom' 
