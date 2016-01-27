@@ -43,7 +43,7 @@ Footer with author(s) and copyright (remove or edit)
   color: #563d7c;
 }
 
-a .snippet-ref {
+a.snippet-ref {
     color: inherit;
     border-bottom: 1px dashed #999;
     cursor: default;
@@ -134,6 +134,14 @@ sites with heavy traffic -->
 <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 <script type="text/javascript">
 $('[data-url]').qtip({
+    style: 'qtip-bootstrap',
+    hide: {
+                    fixed: true,
+                    delay: 300
+    },
+    show: {
+            delay: 500
+    },
     content: {
         text: function(event, api) {
             $.ajax({
