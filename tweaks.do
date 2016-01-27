@@ -36,3 +36,6 @@ def snippet(title, id):
     else:
         return title
 %>
+<%
+no.rcParams['figure.figsize']=(8,6)
+%>
