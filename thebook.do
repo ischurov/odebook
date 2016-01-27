@@ -4,3 +4,6 @@
 # #include "chapter01.do"
 !split
 # #include "chapter02.do"
+!split
+# #include "glossary.do"
+

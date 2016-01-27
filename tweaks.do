@@ -39,3 +39,15 @@ def snippet(title, id):
 <%
 no.rcParams['figure.figsize']=(8,6)
 %>
+<%def name="details(*refs)">
+% if FORMAT == 'html':
+Подробнее: ${", ".join("ref{%s}" % ref for ref in refs)}.
+% else:
+Подробнее см. в 
+% if len(refs) == 1:
+разделе ref{${refs[0]}}.
+% else:
+разделах ${", ".join("ref{%s}" % ref for ref in refs)}.
+% endif
+% endif
+</%def>

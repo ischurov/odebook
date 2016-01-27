@@ -3,7 +3,7 @@
 """
 Automatically generated file for compiling doconce documents.
 """
-import sys, glob, os, shutil, subprocess, codecs
+import sys, glob, os, shutil, subprocess, codecs, re
 
 logfile = 'tmp_output.log'  # store all output of all operating system commands
 f = open(logfile, 'w'); f.close()  # touch logfile so it can be appended
@@ -92,7 +92,7 @@ def latex(name,
     cmd = 'doconce format %(latex_program)s %(name)s %(options)s ' % vars()
     system(cmd)
 
-    cmd = r"doconce replace '%% insert custom LaTeX commands...' '\usepackage[russian]{babel}' %(name)s.tex" % vars()
+    cmd = r"doconce replace '%% insert custom LaTeX commands...' '\usepackage[russian]{babel} \usepackage{titlesec} \titleformat{\subsubsection}[runin] {\normalfont\normalsize\bfseries}{\thesubsubsection.}{1em}{} \let\paragraph=\subsubsection' %(name)s.tex" % vars()
     system(cmd)
 
     cmd = r"doconce replace '\usepackage{lmodern}' '%%\usepackage{lmodern}' %(name)s.tex" % vars()
@@ -319,11 +319,32 @@ def cleanup_html(fn):
         f.write("".join(out))
 
 def mksnippets():
-    os.chdir("snippets")
-    for fn in glob.glob("*.do"):
-        system('doconce format html %s --html_template=dummy_template.html --encoding=utf-8' % fn)
-        cleanup_html(fn.replace(".do", ".html"))
-    os.chdir("..")
+    for fn in glob.glob("._*.html"):
+        with codecs.open(fn, 'r', encoding='utf-8') as thebook:
+            snippet_name = None
+            snippet_content = []
+            snippets = {}
+            for line in thebook:
+                if 'navigation buttons at the bottom of the page' in line \
+                        or 'end of snippets' in line:
+                    break
+                if 'snippet: ' in line:
+                    m = re.search(ur'snippet:\s*(\w+)', line)
+                    if m:
+                        snippet_name = m.groups(1)
+                        snippets[snippet_name] = snippet_content
+                else:
+                    if snippet_name:
+                        if re.match('<h\d', line):
+                            snippet_content = []
+                            snippet_name = None
+                        else:
+                            snippet_content.append(line)
+
+    for snippet_name, snippet_content in snippets.items():
+        with codecs.open("snippets/%s.html" % snippet_name, 
+                'w', encoding='utf-8') as snippet:
+            snippet.write("".join(snippet_content))
 
 
 def main():
