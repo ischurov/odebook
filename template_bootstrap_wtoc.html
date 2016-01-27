@@ -19,7 +19,8 @@ LINK1, LINK2 links in the navigation topbar (remove, edit, or add more)
 Footer with author(s) and copyright (remove or edit)
 -->
 
-<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet"
+<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.css" />
 
 <!-- Can add other themes and adjust colors in the navigation sidebar -->
 <!--
@@ -40,6 +41,12 @@ Footer with author(s) and copyright (remove or edit)
 .bs-docs-sidebar .nav > .active:hover > a,
 .bs-docs-sidebar .nav > .active:focus > a {
   color: #563d7c;
+}
+
+a .snippet-ref {
+    color: inherit;
+    border-bottom: 1px dashed #999;
+    cursor: default;
 }
 </style>
 
@@ -126,7 +133,7 @@ sites with heavy traffic -->
 <!-- Optional: imagesLoaded script to better support images inside your tooltips -->
 <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
 <script type="text/javascript">
-$('.snippet-ref').qtip({
+$('[data-url]').qtip({
     content: {
         text: function(event, api) {
             $.ajax({
@@ -143,7 +150,7 @@ $('.snippet-ref').qtip({
                 api.set('content.text', status + ': ' + error);
             });
 
-            return 'Loading...'; // Set some initial text
+            return 'Загружается...'; // Set some initial text
         }
     }
 });
