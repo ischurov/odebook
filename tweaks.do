@@ -45,9 +45,10 @@ no.rcParams['figure.figsize']=(8,6)
 % else:
 Подробнее см. в 
 % if len(refs) == 1:
-разделе ref{${refs[0]}}.
+параграфе ref{${refs[0]}}.
 % else:
-разделах ${", ".join("ref{%s}" % ref for ref in refs)}.
+параграфах ${", ".join("ref{%s}" % ref for ref in refs)}.
 % endif
 % endif
 </%def>
+
