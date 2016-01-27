@@ -29,3 +29,10 @@ __Контрольный вопрос.__
 %endif
 </%def>
 
+<%
+def snippet(title, id):
+    if FORMAT == 'html':
+        return u"<a class='snippet-ref' data-url='snippets/{id}.html'>{title}</a>".format(id=id, title=title)
+    else:
+        return title
+%>

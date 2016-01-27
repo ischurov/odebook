@@ -3,7 +3,7 @@
 """
 Automatically generated file for compiling doconce documents.
 """
-import sys, glob, os, shutil, subprocess
+import sys, glob, os, shutil, subprocess, codecs
 
 logfile = 'tmp_output.log'  # store all output of all operating system commands
 f = open(logfile, 'w'); f.close()  # touch logfile so it can be appended
@@ -303,6 +303,29 @@ def mwiki(name, options=''):
 def gwiki(name, options=''):
     doconce2format(name, 'gwiki', options)
 
+def cleanup_html(fn):
+    show = False
+    out = []
+    with codecs.open(fn, "r", encoding='utf-8') as f:
+        for line in f:
+            if "<!-- ------------------- end of main content --------------- -->" in line:
+                show = False
+            if show:
+                out.append(line)
+            if "<!-- ------------------- main content ---------------------- -->" in line:
+                show = True
+    assert out, "No output in %s" % fn
+    with codecs.open(fn, 'w', encoding='utf-8') as f:
+        f.write("".join(out))
+
+def mksnippets():
+    os.chdir("snippets")
+    for fn in glob.glob("*.do"):
+        system('doconce format html %s --html_template=dummy_template.html --encoding=utf-8' % fn)
+        cleanup_html(fn.replace(".do", ".html"))
+    os.chdir("..")
+
+
 def main():
     """
     Produce various formats from the doconce source.
@@ -331,6 +354,8 @@ def main():
 
     # Solarized HTML
     #html(dofile, options=common_options + common_html_options + ' --html_style=solarized3 --html_output=%s-solarized' % dofile, split=True)
+
+    mksnippets()
 
     # --- latex ---
 

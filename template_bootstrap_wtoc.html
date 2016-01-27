@@ -120,4 +120,32 @@ the docs.min.css style, which makes orange math...
 <!-- NOTE: replace rawgit.com by cdn.rawgit.com for production or
 sites with heavy traffic -->
 <script src="https://rawgit.com/hplgit/doconce/master/bundled/html_styles/style_bootstrap_wtoc/js/docs.min.js"></script>
+<!-- Include either the minifed or production version, NOT both!! -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/qtip2/2.2.1/jquery.qtip.min.js"></script>
+
+<!-- Optional: imagesLoaded script to better support images inside your tooltips -->
+<script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript">
+$('.snippet-ref').qtip({
+    content: {
+        text: function(event, api) {
+            $.ajax({
+                url: api.elements.target.attr('data-url') // Use data-url attribute for the URL
+            })
+            .then(function(content) {
+                // Set the tooltip content upon successful retrieval
+                api.set('content.text', content);
+
+                // Update math
+                MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+            }, function(xhr, status, error) {
+                // Upon failure... set the tooltip content to the status and error value
+                api.set('content.text', status + ': ' + error);
+            });
+
+            return 'Loading...'; // Set some initial text
+        }
+    }
+});
+</script>
 </html>

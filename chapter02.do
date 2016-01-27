@@ -48,7 +48,7 @@ mplot(linspace(-4,4),lambda t: exp(t), color='blue')
 </%doc>
 
 ===== Численное решение дифференциальных уравнений. Метод Эйлера =====
-Пусть поставлена задача Коши:
+Пусть поставлена ${snippet(u"задача Коши", "cauchy")}:
 !bt
 \begin{equation}
 label{eq:2:Cauchy}
