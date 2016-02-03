@@ -377,6 +377,7 @@ def main():
     #html(dofile, options=common_options + common_html_options + ' --html_style=solarized3 --html_output=%s-solarized' % dofile, split=True)
 
     mksnippets()
+    sys.exit(1)
 
     # --- latex ---
 
