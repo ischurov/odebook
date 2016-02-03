@@ -31,7 +31,7 @@
         F(x) = t 
     При этом $F'(x_0)=\frac{1}{f(x_0)}≠0$ по предположению. Следовательно,
     существует обратная функция $x=F^{-1}(t)$, удовлетворяющая
-    \ref{eq:3:Barrow} и таким образом являющаяся решением задачи
+    \eqref{eq:3:Barrow} и таким образом являющаяся решением задачи
     Коши \eqref{eq:3:Cauchy}.
 
     Если вы не доверяете теореме об обратной функции, можно рассуждать так.
@@ -138,6 +138,7 @@ $f(x)=x^{2/3}$ не является гладкой функцией в точк
     (См. рис \ref{fig:3:cone}.)
     \figure \label fig:3:cone
         \pythonfigure
+            plt.cla()
             plt.axis([-4,4,-4,4])
             ob.center_spines()
             ob.mplot(np.linspace(-3,3),lambda x: 0.5*x, color="grey",label=u"tangent line")
@@ -146,7 +147,7 @@ $f(x)=x^{2/3}$ не является гладкой функцией в точк
             ob.mplot(np.linspace(-3,3),lambda x: 0.5*(x**3+x))
             plt.text(3.8,0.2,"$x$",fontsize=15)
             plt.text(0.1,3.8,"$y$",fontsize=15)
-            plt.legend()
+            plt.legend(loc=4)
         \caption Оценка гладкой функции
             
     \proof \of леммы \ref{lem:Lip}
