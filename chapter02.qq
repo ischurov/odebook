@@ -39,7 +39,7 @@
 На рис. \ref{fig:2:euler} синим изображено истинное решение уравнения $\dot x = t$ с начальным условием $x(-3)=4$, а красным, розовым, фиолетовым и зеленым изображены численные решения уравнения методом Эйлера 5, 10, 20 и 100 шагами соответственно.
 Заметим, что уже сто шагов дает достаточно хорошее приближение решения.
 
-\figure \label fig:2:euler
+\figure \label fig:2:euler \showcode \collapsed
     \pythonfigure
         ob.axes4x4()
         ob.eulersplot(lambda t, x: t, -3, 4, 4, 5, color='red')
@@ -80,7 +80,7 @@
 
 Рассмотрим поля направлений двух уравнений: первое является простейшим, а второе
 автономным, см. рис. \ref{fig:2:xt}.
-\figure \label fig:2:xt
+\figure \label fig:2:xt \showcode \collapsed
     \pythonfigure
         plt.figure(figsize=(8, 4))
         plt.subplot(121)
