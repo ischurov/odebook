@@ -199,9 +199,9 @@
     \end{pmatrix}  
     =
     \begin{pmatrix} 
-        e^\lambda_1 &\dots& 0 \\\\
+        e^{\lambda_1} &\dots& 0 \\\\
         \vdots& \ddots & \vdots \\\\ 
-        0& \dots & e^\lambda_n 
+        0& \dots & e^{\lambda_n }
     \end{pmatrix} 
 Решение уравнения \ref{eq:11:main} для диагонализируемой матрицы
 $A$ теперь представляется в виде: 
