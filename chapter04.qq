@@ -674,8 +674,10 @@ $t\in I$ рисуется точка $(t, x(t), y(t))$, где $(x(t), y(t))=\ph
     \align
         \item  \frac{dx}{x}     &=\frac{dy}{y}
         \item \int \frac{dx}{x} &=\int \frac{dy}{y}
-        \item \ln |y|           &= \ln |x| + C
-        \item |y|               &= C |x|
+        \item 
+            \ln |y|           &= \ln |x| + C
+        \item 
+            |y|               &= C |x|
     Поскольку $x$ и $y$ никогда не меняют знак, можно снять модули и получить
     уравнение $y=Cx$, задающее то же семейство прямых, что и раньше.
 
