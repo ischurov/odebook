@@ -84,7 +84,7 @@ $f'_x(t, 0) x$. Поскольку правая часть меняется «н
 
 \align
     \item \frac{dy}{dt} & = f'_x(t, 0) y
-    \item \frac{dy}{y} & = f'_x(t, 0)
+    \item \frac{dy}{y} & = f'_x(t, 0) dt
     \item \int_{y_0}^y \frac{d\xi}{\xi} & = \int_{t_0}^t f'_x(\tau, 0) \, d\tau
     \item \ln (y/y_0) & = \int_{t_0}^t f'_x(\tau ,0)\, d\tau 
     \item y & = y_0 \exp \int_{t_0}^t f'_x(\tau, 0) \, d\tau
