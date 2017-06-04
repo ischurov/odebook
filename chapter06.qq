@@ -268,7 +268,7 @@ $H$. В этом случае решение $y=y(x)$ уравнения \ref{eq
 Если частные производные функции $H$ непрерывны (а мы будем предполагать, что
 это так), то её смешанные производные равны:
 \eq
-    \padi{H(x,y)}{x\partial y}=\padi{H(x,y)}{y\partial x}
+    \padi{^2 H(x,y)}{x\partial y}=\padi{^2 H(x,y)}{y\partial x}
 Отсюда следует, что
 \equation \label eq:6:necessary
     \padi{F(x,y)}{y}=\padi{G(x,y)}{x}
