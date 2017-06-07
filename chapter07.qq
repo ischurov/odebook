@@ -24,9 +24,9 @@
     Имеем:
 
     \eq
-        L_v H=\frac{\partial H}{\partial y} \dot x-\frac{\partial H}{\partial
-            x}\dot y=\frac{\partial H}{\partial y}\frac{\partial H}{\partial
-            x}-\frac{\partial H}{\partial x}\frac{\partial H}{\partial y}=0
+        L_v H=\frac{\partial H}{\partial x} \dot x-\frac{\partial H}{\partial
+            y}\dot y=\frac{\partial H}{\partial x}\frac{\partial H}{\partial
+            y}-\frac{\partial H}{\partial y}\frac{\partial H}{\partial x}=0
     
     Иными словами, скорость изменения функции $H$ при движении вдоль решений
     дифференциального уравнения \ref{eq:7:Ham} равна нулю, то есть $H$ — первый
@@ -175,12 +175,12 @@
     \rawhtml
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Pendulum_gravity.svg" style='max-width:300px'>
     \caption 
-        Силы, действующие на маятник. Автор изображения: <a
-        href="https://commons.wikimedia.org/wiki/User:Krishnavedala">Krishnavedala</a> /
-        Wikimedia Commons, лицензия <a
-        href="https://creativecommons.org/licenses/by-sa/3.0/deed.ru">CC BY-SA</a>. <a
-        href="https://commons.wikimedia.org/wiki/File:Pendulum_gravity.svg">Оригинальное
-        изображение</a>.
+        Силы, действующие на маятник. Автор изображения: \href[Krishnavedala /
+        Wikimedia
+        Commons|https://commons.wikimedia.org/wiki/User:Krishnavedala], лицензия
+        \href[CC BY-SA|https://creativecommons.org/licenses/by-sa/3.0/deed.ru].
+        \href[Оригинальное
+        изображение|https://commons.wikimedia.org/wiki/File:Pendulum_gravity.svg].
 
 Пусть маятник отклонён от положения равновесия на угол $\theta$. Рассмотрим
 силы, действующие на грузик (см. рис.  \ref{fig:07:pendulum-forces}).  На него
@@ -306,5 +306,4 @@ $\theta$, но положение (а значит и скорость, и ус�
 максимума — падать с «горки» влево или вправо. Аналогичная интерпретация
 работает и в случае других функций полной энергии.
 
-Вы можете поэкспериментировать с математическим маятником с помощью <a
-href="http://math-info.hse.ru/f/2015-16/nes-ode/pendulum.html">интерактивной демонстрации</a>.
+Вы можете поэкспериментировать с математическим маятником с помощью \href[Интерактивной демонстрации|http://math-info.hse.ru/f/2015-16/nes-ode/pendulum.html].
