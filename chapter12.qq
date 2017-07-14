@@ -36,10 +36,7 @@
         plt.xlim(-0.5, 0.5)
         plt.xticks([], [])
         plt.ylim(-4, 4)
-        plt.quiver([0, 0, 0], [1.05, 0.95, -4], [0, 0, 0], [3, -2+0.1, 2.95], angles='xy', 
-                   scale_units='xy', scale=1, units='inches', width=0.03, color='Teal')
-        plt.plot([0, 0], [1, -1], color='Teal', marker='o', 
-                 fillstyle='none', mew=5, lw=0, markersize=2)
+        ob.onedim_phasecurves(-4, 4, [-1, 1], [1, -1, 1])
         plt.subplot2grid((1, 10), (0, 1), colspan=8)
         ob.axes4x4()
         def f(t, x):
@@ -503,7 +500,8 @@ $\eps$-окрестность.
 не очень просто. К счастью, существует теорема, которая сильно упрощает решение
 задач такого типа.
 
-\theorem (Ляпунова, об устойчивости по первому приближению.)
+\theorem \label thm:12:Lyap
+    (Ляпунова, об устойчивости по первому приближению.)
 
     Для особой точки $\mb x_*$ системы дифференциальных уравнений \ref{eq:12:gen}
     рассмотрим матрицу Якоби: 
