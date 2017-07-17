@@ -405,7 +405,7 @@ $\eps$-окрестность.
 
 Рассмотрим далее особую точку типа «центр». Её траекториями могут быть достаточно вытянутые эллипсы: точка, движущаяся вдоль такой траектории может как приближаться, так и удаляться от начала координат.
 
-\figure
+\figure \showcode \collapsed
     \pythonfigure \style width: 350px;
         plt.figure(figsize=(6,6))
         ob.axes4x4(labels=('x','y'))
@@ -428,7 +428,7 @@ $\eps$-окрестность.
 \h3 Седло
 Рассмотрим теперь особую точку вида седло:
 
-\figure
+\figure \showcode \collapsed
     \pythonfigure \style width:350px;
         def linfield(A, C, inits):    
             ob.phaseportrait(lambda X, t=0: C @ A @ np.linalg.inv(C) @ X,
@@ -446,7 +446,6 @@ $\eps$-окрестность.
         linfield(np.diag([-1, 1]), C, inits)
         theta = np.linspace(0, 2 * np.pi)
         plt.plot(3 * np.cos(theta), 3 * np.sin(theta), color='black', lw=2)
-
 
 Сколь бы малую $\delta$-окрестность мы бы ни выбрали, эту окрестность пересекают траектории из семейства гипербол, уходящие далеко от седла. Из этого следует, что седло является неустойчивым. 
 

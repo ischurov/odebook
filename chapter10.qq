@@ -17,7 +17,7 @@
     \dot{\mb z}=A \mb{z},\quad \mb{z}(t)\in \mathbb R^n,
 где $A\colon \mathbb R^n\to\mathbb R^n$ — фиксированный линейный оператор.
 
-\example
+\example \label ex:10:example
     Вот пример уравнения вида \ref{eq:10:main}, записанного в виде системы:
     \equation \label eq:10:example
         \dot x=2x+3y,\quad \dot y=x+4y.

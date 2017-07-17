@@ -8,6 +8,7 @@
 \include chapter08.qq
 \include chapter09.qq
 \include chapter10.qq
+\include chapter10_prim.qq.tex
 \include chapter11.qq
 \include chapter12.qq
 \include chapter13.qq
