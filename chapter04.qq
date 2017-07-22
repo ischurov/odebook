@@ -106,8 +106,8 @@
             дифференциальное уравнение имеет вид:
             \eq
                 \begin{cases}
-                \dot y  = ky-\lambda \cdot xy\\\\
-                \dot x  = - \beta x + \gamma \cdot xy,
+                \dot x  = - \beta x + \gamma \cdot xy,\\\\
+                \dot y  = ky-\lambda \cdot xy.
                 \end{cases}
             где $k$, $\lambda$, $\beta$, $\gamma$ — некоторые положительные параметры.
             Фазовым пространством здесь является первая координатная четверть $x\ge 0,

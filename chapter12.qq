@@ -27,7 +27,23 @@
 пяти фазовых кривых: двух особых точек $1$ и $-1$, двух лучей $(-\infty, -1)$
 и $(1, \infty)$ и интервала $(-1, 1)$. Направления движения вдоль фазовых кривых
 определяются знаком правой части: от точки $1$ и к точке $-1$, см.
-\ref[рис.|fig:12:x2_1].
+\ref[рис.|fig:12:x2_1_rhs] и \ref{fig:12:x2_1}.
+
+\figure \showcode \collapsed \label fig:12:x2_1_rhs
+    \pythonfigure \style max-width: 350px;
+        plt.figure(figsize=(6, 4))
+        plt.subplot2grid((6, 1), (0, 0), rowspan=5)
+        ob.axes4x4(labels=('x', '\\dot x'), ymin=-2)
+        x = np.linspace(-4, 4)
+        plt.plot(x, x**2 - 1, '-', lw=2)
+        plt.plot([1, 1], [-2, 4], '--', color='gray', lw=2)
+        plt.plot([-1, -1], [-2, 4], '--', color='gray', lw=2)
+        plt.subplot2grid((6, 1), (5, 0))
+        plt.yticks([])
+        plt.xlim(-4, 4)
+        ob.onedim_phasecurves(-4, 4, [-1, 1], [-1, 1, -1], orientation='horizontal')
+    \caption График правой части (сверху) и фазовые кривые (снизу) для уравнения
+        \ref{eq:12:x2_1}
 
 \figure \showcode \collapsed \label fig:12:x2_1
     \pythonfigure
@@ -75,8 +91,8 @@
             
         def linfield(A, C, inits):    
             ob.phaseportrait(lambda X, t=0: C @ A @ np.linalg.inv(C) @ X,
-                             (C @ inits).T, [-2, 2], n=50, head_length=0.6, 
-                             head_width=0.3, linewidth=1)
+                             (C @ inits).T, [-2, 2], n=50, head_length=0.4, 
+                             head_width=0.2, linewidth=1)
             plt.plot([0], [0], marker='o', mew=2, lw=0, markersize=5,
                      markerfacecolor='white', markeredgecolor='blue')
 
@@ -152,16 +168,16 @@
             H, levels=levels, colors='blue', linestyles='solid')
         theta_inits = np.linspace(0, np.pi, len(v_levels))
         v_inits = np.sqrt(2 * np.cos(theta_inits) + v_levels ** 2 - 2)
-        ob.phaseportrait(lambda X, t=0: np.array([X[1], -np.sin(X[0])]), 
+        ob.phaseportrait(lambda X: np.array([X[1], -np.sin(X[0])]), 
                         list(np.array([theta_inits, v_inits]).T)[4::4], 
                         t = (0, 0.01), color='blue')
-        ob.phaseportrait(lambda X, t=0: np.array([X[1], -np.sin(X[0])]), 
+        ob.phaseportrait(lambda X: np.array([X[1], -np.sin(X[0])]), 
                          list(np.array([theta_inits, -v_inits]).T)[5::4], 
                          t = (0, 0.01), color='blue')
-        ob.phaseportrait(lambda X, t=0: np.array([X[1], -np.sin(X[0])]), 
+        ob.phaseportrait(lambda X: np.array([X[1], -np.sin(X[0])]), 
                          list(np.array([-theta_inits, -v_inits]).T)[2::4], 
                          t = (0, 0.01), color='blue')
-        ob.phaseportrait(lambda X, t=0: np.array([X[1], -np.sin(X[0])]), 
+        ob.phaseportrait(lambda X: np.array([X[1], -np.sin(X[0])]), 
                          list(np.array([-theta_inits, v_inits]).T)[3::4], 
                          t = (0, 0.01), color='blue')
     \caption Фазовые кривые математического маятника
@@ -206,7 +222,7 @@
 точки) будут неустойчивыми с точки зрения любого разумного определения
 устойчивости.
 
-Наконец, рассмотрим особые точки типа "центр". Они похожи на положения равновесия
+Наконец, рассмотрим особые точки типа «центр». Они похожи на положения равновесия
 $(0, 0)$ для математического маятника. При этом маятник направлен вертикально
 вниз и неподвижен. Небольшое отклонение маятника от такого положения приведёт к
 тому, что он начнёт колебаться — на фазовом портрете это соответствует замкнутой
