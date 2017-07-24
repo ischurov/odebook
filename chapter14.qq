@@ -249,13 +249,12 @@
 Чтобы понять, как устроена динамика, снова перейдем в полярные координаты.
 Вместо полярного радиуса будем использовать его квадрат $\rho=x^2+y^2$. Имеем:
 
-\align\nonumber
+\align \nonumber
     \item 
         \dot \rho & = 2x\dot x + 2y \dot y=2(x(\eps x - y + cx(x^2+y^2))+y(x +
         \eps y + cy(x^2+y^2)))=
     \item
         & = 2(\eps(x^2+y^2)+c(x^2+y^2)^2)=2\rho(\eps+c\rho)
-
 Уравнение на $\rho$ принимает вид:
 \equation \label eq:14:rho
     \dot \rho = 2\rho(\eps+c\rho),
