@@ -46,7 +46,8 @@
         ob.eulersplot(lambda t, x: t, -3, 4, 4, 10, color='pink')
         ob.eulersplot(lambda t, x: t, -3, 4, 4, 20, color='purple')
         ob.eulersplot(lambda t, x: t, -3, 4, 4, 100, color='green')
-        ob.mplot(np.linspace(-4,4),lambda x: x**2 / 2 - 0.5, color='blue')
+        ob.mplot(np.linspace(-4,4),lambda x: x**2 / 2 - 0.5, 
+            color='steelblue')
     \caption Приближённые решения
 
 

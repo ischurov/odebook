@@ -106,8 +106,9 @@ $f(x)=x^{2/3}$ не является гладкой функцией в точк
             plt.axis([-1,5,-1,5])
             ob.center_spines()
             ob.mplot(np.linspace(1,5),lambda x: (x - 1)**2 / 2, 
-                     color='blue', linewidth=3)
-            ob.mplot(np.linspace(0,1),lambda x: 0, color='blue', linewidth=3)
+                     color='steelblue', linewidth=3)
+            ob.mplot(np.linspace(0,1),lambda x: 0, color='steelblue', 
+                     linewidth=3)
             plt.text(4.8,0.2,"$t$",fontsize=15)
             plt.text(0.1,4.7,"$x$",fontsize=15)
             plt.plot([2.5, 2.5, 0], [0, 1.125, 1.125], 'k--', 

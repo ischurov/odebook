@@ -143,7 +143,7 @@ $I=[-1, 1]$. Чтобы придать формальный смысл утве�
         \pythonfigure \style max-width: 450px
             plt.figure(figsize=(6,6))
             ob.axes4x4(labels=('x', '\\dot x'))
-            ob.mplot(np.linspace(-4, 4), lambda x:-x, color='blue')
+            ob.mplot(np.linspace(-4, 4), lambda x:-x, color='steelblue')
             ob.mplot(np.linspace(-4, 4), lambda x: -x + 0.2*(np.cos(x) + x + (x/4.)**2),
                 color='red')
             ob.mplot(np.linspace(-4, 4), lambda x: -x + 0.4*(np.cos(x) + x + (x/4.)**2),
@@ -563,7 +563,7 @@ $x$ она маленькая, потому что популяция мален
             fontsize=14)
 
         for x0 in [0, 0.01, 0.1, 0.5, 1, 2, 20]:
-            ob.eulersplot(f, 0,  7, x0, color='blue')
+            ob.eulersplot(f, 0,  7, x0, color='steelblue')
     \caption
         График правой части (слева вверху), интегральные кривые (справа) и
         фазовый портрет (слева внизу и посередине) уравнения

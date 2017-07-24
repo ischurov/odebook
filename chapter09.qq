@@ -55,9 +55,9 @@ $t$.
             plt.text(-3,1,"$x_0$", fontsize=20)
             plt.text(-3,0, "$t_0$", fontsize=20, horizontalalignment='right',
                     verticalalignment="bottom")
-            plt.plot([-3, -3], [-4, 4], lw=2, color='blue')
+            plt.plot([-3, -3], [-4, 4], lw=2, color='steelblue')
             # plt.text(2, 3, "$\\\\varphi(t_1;x_0)$", fontsize=20)
-            plt.plot([2, 2], [-4, 4], lw=2, color='blue')
+            plt.plot([2, 2], [-4, 4], lw=2, color='steelblue')
     \caption Различное поведение решений, близких к нулевому
 
 Итак, нас интересует поведение решения с начальным условием $x(t_0)=x_0$ при $x_0$ близком к нулю. Будем считать, что на интересующем нас промежутке времени решение убежит от нуля не слишком сильно. В этом случае можно считать, что
@@ -130,10 +130,10 @@ $f'_x(t, 0)>c>0$ при всех $t$, то любое решение, близк
         plt.text(-3,2,"$x_2$", fontsize=20, horizontalalignment='right')
         plt.text(-3,0,"$t_0$", fontsize=20, horizontalalignment='right',
                  verticalalignment="bottom")
-        plt.plot([-3, -3], [-4, 4], lw=2, color='blue')
+        plt.plot([-3, -3], [-4, 4], lw=2, color='steelblue')
         plt.text(2, 3, "$\\\\varphi(t_1;x_1)$", fontsize=20)
         plt.text(2, -1.5, "$\\\\varphi(t_1;x_2)$", fontsize=20)
-        plt.plot([2, 2], [-4, 4], lw=2, color='blue')
+        plt.plot([2, 2], [-4, 4], lw=2, color='steelblue')
     \caption Так не бывает: интегральные кривые не умеют пересекаться
 
 

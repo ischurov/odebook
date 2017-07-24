@@ -59,7 +59,7 @@
             return x ** 2 - 1
 
         for x0 in [1.0001, 1.001, 1.01, 1, 0.95, 0.99, 0.999, -1, -2, -4]:
-            ob.eulersplot(f, -4, 4, x0, color='blue')
+            ob.eulersplot(f, -4, 4, x0, color='steelblue')
     \caption Фазовые кривые (слева) и интегральные кривые (справа) для уравнения
         \ref{eq:12:x2_1}
 
@@ -90,11 +90,11 @@
             plt.yticks([], [])
             
         def linfield(A, C, inits):    
-            ob.phaseportrait(lambda X, t=0: C @ A @ np.linalg.inv(C) @ X,
-                             (C @ inits).T, [-2, 2], n=50, head_length=0.4, 
+            ob.phaseportrait(lambda X: C @ A @ np.linalg.inv(C) @ X,
+                             inits=(C @ inits).T, t=(-2, 2), n=50, head_length=0.4, 
                              head_width=0.2, linewidth=1)
             plt.plot([0], [0], marker='o', mew=2, lw=0, markersize=5,
-                     markerfacecolor='white', markeredgecolor='blue')
+                     markerfacecolor='white', markeredgecolor='steelblue')
 
         plt.figure(figsize=(8, 6))
         plt.rcParams['font.family'] = 'Arial'
@@ -165,21 +165,21 @@
             levels.append(H(0, v))
             # levels = [H(0, v) for v in v_levels]
         ob.mcontour(np.linspace(-5, 5, 300), np.linspace(-5, 5, 300),
-            H, levels=levels, colors='blue', linestyles='solid')
+            H, levels=levels, colors='steelblue', linestyles='solid')
         theta_inits = np.linspace(0, np.pi, len(v_levels))
         v_inits = np.sqrt(2 * np.cos(theta_inits) + v_levels ** 2 - 2)
         ob.phaseportrait(lambda X: np.array([X[1], -np.sin(X[0])]), 
                         list(np.array([theta_inits, v_inits]).T)[4::4], 
-                        t = (0, 0.01), color='blue')
+                        t = (0, 0.01), color='steelblue')
         ob.phaseportrait(lambda X: np.array([X[1], -np.sin(X[0])]), 
                          list(np.array([theta_inits, -v_inits]).T)[5::4], 
-                         t = (0, 0.01), color='blue')
+                         t = (0, 0.01), color='steelblue')
         ob.phaseportrait(lambda X: np.array([X[1], -np.sin(X[0])]), 
                          list(np.array([-theta_inits, -v_inits]).T)[2::4], 
-                         t = (0, 0.01), color='blue')
+                         t = (0, 0.01), color='steelblue')
         ob.phaseportrait(lambda X: np.array([X[1], -np.sin(X[0])]), 
                          list(np.array([-theta_inits, v_inits]).T)[3::4], 
-                         t = (0, 0.01), color='blue')
+                         t = (0, 0.01), color='steelblue')
     \caption Фазовые кривые математического маятника
 
 Здесь мы видим два типа особых точек: вблизи точки $(0,0)$ фазовые кривые похожи
@@ -318,7 +318,7 @@ $\ph(0; \mb x_0)=\mb x_0$.
 
                         for x0 in [0, 1, -1, 0.001, -0.001, 0.01, 
                                    -0.01, 0.1, -0.1, 4,  -4]:
-                            ob.eulersplot(f, -4, 4, x0, color='blue')
+                            ob.eulersplot(f, -4, 4, x0, color='steelblue')
                     \caption 
                         Фазовые кривые (слева) и интегральные кривые (справа)
                         для уравнения $\dot x = -x(x-1)(x+1)$.
@@ -402,10 +402,10 @@ $\eps$-окрестность.
         ob.axes4x4(labels=('x', 'y'))
         def linfield(A, C, inits):    
             ob.phaseportrait(lambda X, t=0: C @ A @ np.linalg.inv(C) @ X,
-                             (C @ inits).T, [-2, 2], n=50, head_length=0.3, 
+                             (C @ inits).T, t=(-2, 2), n=50, head_length=0.3, 
                              head_width=0.15, linewidth=1)
             plt.plot([0], [0], marker='o', mew=2, lw=0, markersize=5,
-                     markerfacecolor='white', markeredgecolor='blue')
+                     markerfacecolor='white', markeredgecolor='steelblue')
 
         C = np.array([[1, 0], [0, 1]])
         theta = np.linspace(0, 2 * np.pi, 4 * 3 + 1)
@@ -448,10 +448,10 @@ $\eps$-окрестность.
     \pythonfigure \style width:350px;
         def linfield(A, C, inits):    
             ob.phaseportrait(lambda X, t=0: C @ A @ np.linalg.inv(C) @ X,
-                             (C @ inits).T, [-2, 2], n=50, head_length=0.4, 
+                             (C @ inits).T, t=(-2, 2), n=50, head_length=0.4, 
                              head_width=0.2, linewidth=1)
             plt.plot([0], [0], marker='o', mew=2, lw=0, markersize=5,
-                     markerfacecolor='white', markeredgecolor='blue')
+                     markerfacecolor='white', markeredgecolor='steelblue')
 
         from itertools import product
         plt.figure(figsize=(6,6))

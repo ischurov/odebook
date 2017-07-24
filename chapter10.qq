@@ -205,7 +205,7 @@ $\mu > \lambda > 0$ (если это не так, просто поменяем 
         y = np.sin(theta) * r
 
         ob.phaseportrait(lambda X, t=0: np.array([X[0], 1.6*X[1]]), 
-                        np.array([x, y]).T, [-4, 2], n=50, linewidth=1.5)
+            np.array([x, y]).T, t=(-4, 2), n=50, linewidth=1.5)
     \caption Неустойчивый узел в диагонализирующем базисе
 
 Чтобы нарисовать фазовый портрет в исходных координатах, необходимо совершить
@@ -240,7 +240,7 @@ $\mu > \lambda > 0$ (если это не так, просто поменяем 
         y = np.sin(theta) * r
 
         ob.phaseportrait(lambda X, t=0: np.array([X[0], 5 * X[1]]), 
-                        np.array([x, y]).T, [-2, 2], n=50, linewidth=1.5)
+            np.array([x, y]).T, t=(-2, 2), n=50, linewidth=1.5)
     \caption Фазовый портрет системы \ref{eq:10:example} в координатах $(u, v)$
 
 По оси $v$ приближение к нулю происходит гораздо быстрее, чем по оси $u$ (поскольку 5>1), поэтому фазовые кривые стремятся к нулю, касаясь оси $u$. Чтобы нарисовать фазовый портрет в исходном базисе, нужно изобразить новые базисные векторы в старом базисе. Получается примерно так:
@@ -257,8 +257,8 @@ $\mu > \lambda > 0$ (если это не так, просто поменяем 
 
         C = np.array([[-3, 1], [1, 1]])
 
-        ob.phaseportrait(lambda X, t=0: np.array([2 * X[0] + 3 * X[1], X[0] + 4 * X[1]]),
-                        (0.25 * C @ np.array([u, v])).T, [-2, 2], n=50, linewidth=1.5)
+        ob.phaseportrait(lambda X: np.array([2 * X[0] + 3 * X[1], X[0] + 4 * X[1]]),
+            (0.25 * C @ np.array([u, v])).T, t=(-2, 2), n=50, linewidth=1.5)
         plt.arrow(0,0,-3,1,head_width=0.2, head_length=0.3,color='red',lw=2)
         plt.arrow(0,0,1,1,head_width=0.2, head_length=0.3,color='red',lw=2)
     \caption 
@@ -287,8 +287,8 @@ node}).
         x = np.cos(theta) * r
         y = np.sin(theta) * r
 
-        ob.phaseportrait(lambda X, t=0: np.array([-X[0], -1.6*X[1]]), 
-                        np.array([x, y]).T, [-2, 4], n=50, linewidth=1.5)
+        ob.phaseportrait(lambda X: np.array([-X[0], -1.6*X[1]]), 
+            np.array([x, y]).T, t=(-2, 4), n=50, linewidth=1.5)
     \caption Устойчивый узел в диагонализирующем базисе
 \h3 Собственные значения различных знаков: седло
     \label par:10:saddle
@@ -315,9 +315,9 @@ $t\to +\infty$ ненулевое решение будет приближать
         from itertools import product
         plt.figure(figsize=(6, 6))
         ob.axes4x4(labels=('u','v'))
-        ob.phaseportrait(lambda X, t=0: np.array([-X[0], X[1]]),
+        ob.phaseportrait(lambda X: np.array([-X[0], X[1]]),
                         list(product(np.linspace(-15, 15, 26), [-1, 1])) +
-                        [[-3, 0], [3, 0], [0, 3], [0, -3]], [-2, 2], n=50, linewidth=1.5)
+                        [[-3, 0], [3, 0], [0, 3], [0, -3]], t=(-2, 2), n=50, linewidth=1.5)
     \caption Линейное седло: собственные значения разных знаков
 
 \h3 Скалярная матрица: дикритический узел
@@ -358,8 +358,8 @@ $t\to +\infty$ ненулевое решение будет приближать
         x = np.cos(theta) * r
         y = np.sin(theta) * r
 
-        ob.phaseportrait(lambda X, t=0: np.array([X[0], X[1]]), 
-                        np.array([x, y]).T, [-4, 2], n=50, linewidth=1.5)
+        ob.phaseportrait(lambda X: X, 
+            np.array([x, y]).T, t=(-4, 2), n=50, linewidth=1.5)
     \caption Неустойчивый дикритический узел 
 
 \h3 Жорданова клетка: вырожденный узел
@@ -407,8 +407,8 @@ $t\to +\infty$ ненулевое решение будет приближать
         x = y * 0.2
 
 
-        ob.phaseportrait(lambda X, t=0: np.array([- X[0] + 3 * X[1], -X[1]]), 
-                        np.array([x, y]).T, [-2, 4], n=50, linewidth=1.5)
+        ob.phaseportrait(lambda X: np.array([- X[0] + 3 * X[1], -X[1]]), 
+            np.array([x, y]).T, t=(-2, 4), n=50, linewidth=1.5)
     \caption Устойчивый вырожденный узел
 
 \exercise
@@ -709,8 +709,8 @@ $t\to +\infty$ ненулевое решение будет приближать
 
         x = y = np.linspace(-8, 8, 31)
 
-        ob.phaseportrait(lambda X, t=0: np.array([X[1], -X[0]]), 
-                        np.array([x, y]).T, [-4, 2], n=50, linewidth=1.5)
+        ob.phaseportrait(lambda X: np.array([X[1], -X[0]]), 
+            np.array([x, y]).T, t=(-4, 2), n=50, linewidth=1.5)
     \caption Фазовые кривые центра в нормализующих координатах
 
 Если $\alpha \ne 0$, вместе с вращением будет происходить приближение к началу
@@ -729,8 +729,8 @@ $t\to +\infty$ ненулевое решение будет приближать
         x = np.cos(theta) * r
         y = np.sin(theta) * r
 
-        ob.phaseportrait(lambda X, t=0: np.array([0.6 * X[0] - X[1], X[0] + 0.6 * X[1]]), 
-                        np.array([x, y]).T, [-8, 2], n=50, linewidth=1.5)
+        ob.phaseportrait(lambda X: np.array([0.6 * X[0] - X[1], X[0] + 0.6 * X[1]]), 
+            np.array([x, y]).T, t=(-8, 2), n=50, linewidth=1.5)
     \caption Фазовые кривые неустойчивого фокуса в нормализующих координатах
 
 Вращение в исходных координатах может происходить как в положительном
