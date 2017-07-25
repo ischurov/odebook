@@ -74,7 +74,8 @@
                              inits(i, eps),
                              firstint = H if i==0 else None, xmin=0, xmax=3.2, ymin=0, 
                              ymax=3.2, arrow_size=0.7, head_length=0.2, 
-                             singpoint_size=1, t=(-20, 20), n=1000)
+                             singpoint_size=1, t=(-20, 20), n=1000,
+                             gridstep=1000)
     \caption 
         Фазовые кривые в модели Лотки — Вольтерра (слева) и двух различных
         близких к ней системах (в центре и справа); в центре фазовые кривые
