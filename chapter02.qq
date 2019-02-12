@@ -234,9 +234,9 @@ $t_1 = \psi(x_1)$ и $\dot \ph(t_1)=f(x_1)$ (поскольку $\ph$ являе
 
 \align
     \item \dot x&=f(x)
-    \item \frac{dx}{dt}&=f(x) \label{eq:2:magic}
-    \item dt & =\frac{dx}{f(x)} \label{eq:2:int}
-    \item \int_{t_0}^t dt&= \int_{x_0}^x \frac{dx}{f(x)}
+    \item \frac{dx}{dt}&=f(x) 
+    \item dt & =\frac{dx}{f(x)} \label{eq:2:magic}
+    \item \int_{t_0}^t dt&= \int_{x_0}^x \frac{dx}{f(x)} \label{eq:2:int}
 Это может показаться некоторой магией — особенно загадочно выглядит уравнение \ref{eq:2:magic}. Чуть позже мы дадим определение \em{дифференциальной 1-формы}, с помощью которого можно придать этим формулам аккуратный смысл, а пока обратим внимание, что уравнение \ref{eq:2:magic} очень похоже на уравнение \ref{eq:2:Delta_t}. В целом, эта формальная запись фактически повторяет наш вывод в параграфе \ref{par:2:mech}.
 
 \example
