@@ -15,7 +15,6 @@
         \url http://github.com/ischurov/odebook
     \lang ru
 
-\_include intro.qq
 \_include chapter01.qq
 \_include chapter02.qq
 \_include chapter03.qq
