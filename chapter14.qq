@@ -133,7 +133,7 @@
                 }
             </style>
             <script>
-                \include gear.js
+                \_include gear.js
                 mkgear("#fig_14_gear", 10, 2)
             </script>
         \caption 
