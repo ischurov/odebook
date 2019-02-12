@@ -17,7 +17,7 @@ label{eq:2:general}
 функция $\ph$, такая, что выполнено тождество
 !bt
 \[
-\dot \ph(t)=f(\ph(t),t)\quad \forall t \in D
+\dot \ph(t)=f(t,\ph(t))\quad \forall t \in D
 \]
 !et
 <%doc>
