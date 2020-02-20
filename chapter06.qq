@@ -574,8 +574,8 @@ $L_{\mb v} F(\mb x^0)$.
     Пусть $\mb v(\mb x)=(v_1(\mb x), \ldots, v_n(\mb x))$. Тогда
     \eq
         (L_{\mb v} F)(\mb x^0)=\padi{F(\mb x^0)}{x_1} v_1(\mb x^0)+\ldots +
-        \padi{F(\mb x^0)}{x_n} v_n(\mb x^0) = dF(\mb x^0, \mb v) = (\nabla F(\mb x^0), \mb
-        v)
+        \padi{F(\mb x^0)}{x_n} v_n(\mb x^0) = dF(\mb x^0, \mb v(\mb x^0)) = 
+        (\nabla F(\mb x^0), \mb v(\mb x^0))
 \proof
     Это мгновенно следует из теоремы о производной сложной функции.
     Действительно, пусть $\mb x(t)=(x_1(t), \ldots, x_n(t))$. Тогда $\dot
