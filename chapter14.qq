@@ -46,7 +46,7 @@
         \dot r=-1, \quad \dot \theta = 2.
     
     Фазовые кривые узла — прямолинейные лучи
-    \equation \label eq:14:node
+    \equation \label eq:14:node_polar
         r(t)=e^{-t}, \quad \theta(t)=\theta_0,
     а фокуса — спирали 
     \equation \label eq:14:spiral

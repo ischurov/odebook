@@ -24,7 +24,7 @@
     Имеем:
 
     \eq
-        L_v H=\frac{\partial H}{\partial x} \dot x-\frac{\partial H}{\partial
+        L_v H=\frac{\partial H}{\partial x} \dot x + \frac{\partial H}{\partial
             y}\dot y=\frac{\partial H}{\partial x}\frac{\partial H}{\partial
             y}-\frac{\partial H}{\partial y}\frac{\partial H}{\partial x}=0
     
