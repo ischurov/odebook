@@ -6,14 +6,27 @@
         \affiliation
             НИУ ВШЭ
     \link
-        Курс ВШЭ-РЭШ
+        Дополнительные материалы
         \role course
         \url http://math-info.hse.ru/s19/g
     \link
         Исходные коды
         \role source
         \url http://github.com/ischurov/odebook
+    \link
+        Другие учебники
+        \url http://mathbook.info/
+    \link
+        Хочу бумажную книгу!
+        \url http://mathbook.info/#subscribe
     \lang ru
+    \preamble
+        \newcommand{\ph}{\varphi}
+        \newcommand{\eps}{\varepsilon}
+        \newcommand{\padi}[2]{\frac{\partial #1}{\partial #2}}
+        \newcommand{\mb}{\mathbf}
+        \newcommand{\re}{\mathop{\mathrm{Re}}}
+        \newcommand{\im}{\mathop{\mathrm{Im}}}
 
 \_include chapter01.qq
 \_include chapter02.qq
